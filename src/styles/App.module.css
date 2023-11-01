@@ -1,0 +1,151 @@
+.logo {
+    font-size: 6rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5%;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.App_tracks {
+    display: flex;
+    width: 100%;
+    min-height: 25vh;
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App_search {
+    width: 100%;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.logo_container {
+    margin-top: 0%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50%;
+}
+
+.blackground_halfcircle_top {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    width: 80%;
+    border-radius: 0 0 50% 50%;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.blackground_halfcircle_middle{
+    background-color: black;
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
+    display: none;
+}
+
+.blackground_halfcircle_bottom {
+    margin-top: 2em;
+    z-index: -1; 
+    position: relative;
+    margin-left: 10%;
+    border-radius: 50%;
+    margin-bottom: -200px;
+    background-color: rgba(0, 0, 0, 1);
+    height: 300px;
+    width: 80%;
+}
+
+@media screen and (max-width: 1350px) {
+    .blackground_halfcircle_top{
+        height: 70%;
+    }
+
+    .logo {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .blackground_halfcircle_top{
+        height: 60%;
+    }
+
+    .blackground_halfcircle_bottom{
+        height: 270px;
+    }
+
+    .logo {
+        font-size: 3rem;
+        margin-bottom: 0;
+        align-self: start;
+    }
+
+    .logo_container{
+        margin-top: 1%;
+    }
+}
+
+
+@media screen and (max-width: 570px) {
+    .App_tracks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blackground_halfcircle_bottom{
+        height: 240px;
+    }
+
+    .blackground_halfcircle_middle{
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .blackground_halfcircle_top {
+        height: 50%;
+    }
+}

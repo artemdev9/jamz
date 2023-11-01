@@ -1,0 +1,28 @@
+.searchResults_container{
+    width: 45%;
+    margin-left: 10%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    height: 40px;
+    font-size: 2em;
+    padding-left: 5px;
+}
+
+
+@media screen and (max-width: 570px) {
+    .searchResults_container{
+        margin-left: 0px;
+        width: 80%;
+    }
+
+    h2{
+        padding-left: 7px;
+    }
+}

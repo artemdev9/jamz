@@ -1,0 +1,53 @@
+.Playlist_container{
+    width: 45%;
+    margin-right: 10%;
+    margin-left: 5%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.Playlist_controls {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+}
+
+.Playlist_name_input{
+    width: 85%;
+    border-radius: 10px; 
+    font-weight: 500;
+    font-size: 1.8em;
+}
+
+.Playlist_name_button{
+    background-color: black;
+    color: white;
+    border-radius: 10px; 
+    width: 15%;
+    height: 95%;
+}
+
+
+@media screen and (max-width: 700px) {
+    .Playlist_name_button{
+        width: 25%;
+    }
+}
+
+
+@media screen and (max-width: 570px) {
+    .Playlist_container{
+        margin-right: 0px;
+        margin-left: 0px;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .Playlist_name_button{
+        width: 30%;
+    }
+    
+}
