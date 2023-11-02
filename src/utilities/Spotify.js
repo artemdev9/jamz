@@ -1,5 +1,5 @@
 const clientId = "ce95af709e3d4517af7768b52b421167";
-const redirectUri = "http://localhost:3000/";
+const redirectUri = "https://jammz.netlify.app/";
 let accessToken;
 
 const Spotify = {
