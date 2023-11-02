@@ -63,7 +63,7 @@ function App() {
         <header className={style.logo}>Jamz</header>
         <Logo />
       </div>
-      <div className="App_search">
+      <div className={style.App_search}>
         <SearchBar onSearch={search}></SearchBar>
         <div className={style.App_tracks}>
           <SearchResults searchData={searchData} addTrack={addTrack} />

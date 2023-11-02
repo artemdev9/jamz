@@ -37,6 +37,10 @@
 
 .App_search {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    min-height: 80vh;
 }
 
 .App-link {
