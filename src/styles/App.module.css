@@ -78,7 +78,7 @@
 }
 
 .blackground_halfcircle_middle{
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
     width: 50%;
     height: 50px;
     border-radius: 20px;
@@ -142,10 +142,15 @@
         display: block;
     }
 
+    .blackground_halfcircle_top {
+        height: 30%;
+        width: 70%;
+    }
+
 }
 
 @media screen and (max-width: 400px) {
     .blackground_halfcircle_top {
-        height: 50%;
+        height: 23%;
     }
 }

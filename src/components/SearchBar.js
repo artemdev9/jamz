@@ -22,13 +22,14 @@ function SearchBar(props) {
   return (
     <div className={style.searchBar_container}>
       <input
+        className={style.searchBar_input}
         id="search"
         type="text"
         placeholder="Search..."
         onChange={handleTermChange}
         onKeyDown={handleKeyPress}
       ></input>
-      <button type="submit" onClick={search}>
+      <button className={style.searchBar_button} type="submit" onClick={search}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

@@ -60,10 +60,21 @@ input:focus {
 
 button{
   cursor: pointer;
+  border-radius: 0px 10px 10px 0px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border: 0px;
 }
 
 ul{
   margin: 0;
   padding: 0;
+}
+
+input {
+  border-radius: 10px 0px 0px 10px;
+  padding: 4px 5px;
+  border: rgb(255, 255, 255) solid 2px;
+  width: 40%;
 }
 
