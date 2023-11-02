@@ -35,6 +35,7 @@ svg{
 
     .searchBar_input {
         background-color: black;
+        color: white;
         border: rgb(0, 0, 0) solid 2px;
         width: 70%;
     } 
