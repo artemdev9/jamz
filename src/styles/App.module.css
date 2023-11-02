@@ -10,15 +10,12 @@
 }
 
 .App-logo {
-    height: 40vmin;
     pointer-events: none;
 }
 
 .App_tracks {
     display: flex;
     width: 100%;
-    min-height: 25vh;
-
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -29,7 +26,7 @@
 
 .App-header {
     background-color: #282c34;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +59,7 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 50%;
+    height: 10%;
 }
 
 .blackground_halfcircle_top {
@@ -86,16 +83,19 @@
 }
 
 .blackground_halfcircle_bottom {
-    margin-top: 2em;
+    margin-top: 10%;
     z-index: -1; 
     position: relative;
+    display: flex;
+    align-self: end;
+    bottom: 0px;
     margin-left: 10%;
-    border-radius: 50%;
-    margin-bottom: -200px;
+    border-radius: 50% / 100% 100% 0 0;
     background-color: rgba(0, 0, 0, 1);
-    height: 300px;
+    height: 100px;
     width: 80%;
 }
+
 
 @media screen and (max-width: 1350px) {
     .blackground_halfcircle_top{
@@ -113,17 +113,13 @@
     }
 
     .blackground_halfcircle_bottom{
-        height: 270px;
+        height: 70px;
     }
 
     .logo {
         font-size: 3rem;
         margin-bottom: 0;
         align-self: start;
-    }
-
-    .logo_container{
-        margin-top: 1%;
     }
 }
 
@@ -135,7 +131,7 @@
     }
 
     .blackground_halfcircle_bottom{
-        height: 240px;
+        height: 50px;
     }
 
     .blackground_halfcircle_middle{

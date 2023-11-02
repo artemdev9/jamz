@@ -57,7 +57,6 @@ function App() {
   };
 
   return (
-    
     <div className="App">
       <div className={style.blackground_halfcircle_top}></div>
       <div className={style.logo_container}>
