@@ -10,10 +10,20 @@ function Playlist(props) {
   return (
     <div className={style.Playlist_container}>
       <div className={style.Playlist_controls}>
-        <input className={style.Playlist_name_input} onChange={playlistNameChange} value={props.playlistName} />
-        <button className={style.Playlist_name_button} onClick={props.playlistSave}>Add</button>
+        <input
+          className={style.Playlist_name_input}
+          onChange={playlistNameChange}
+          value={props.playlistName}
+        />
+        <button
+          className={style.Playlist_name_button}
+          onClick={props.playlistSave}
+        >
+          Add
+        </button>
       </div>
       <TrackList
+        data-testid="TrackList"
         tracks={props.playlist}
         removeTrack={props.removeTrack}
         isRemoval={true}
