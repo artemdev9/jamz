@@ -17,6 +17,7 @@ describe("SearchResults Component", () => {
   test("renders the SearchResults component", () => {
     const { getByText } = render(<SearchResults {...defaultProps} />);
 
+    // Check if the component renders with the provided props
     expect(getByText("Results")).toBeInTheDocument();
     expect(getByText("Track 1")).toBeInTheDocument();
     expect(getByText("Track 2")).toBeInTheDocument();
