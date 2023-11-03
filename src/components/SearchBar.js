@@ -20,8 +20,9 @@ function SearchBar(props) {
   };
 
   return (
-    <div className={style.searchBar_container}>
+    <div className={style.searchBar_container} data-testid="SearchBar">
       <input
+        data-testid="SearchBar-input"
         className={style.searchBar_input}
         id="search"
         type="text"
@@ -29,7 +30,12 @@ function SearchBar(props) {
         onChange={handleTermChange}
         onKeyDown={handleKeyPress}
       ></input>
-      <button className={style.searchBar_button} type="submit" onClick={search}>
+      <button
+        data-testid="SearchBar-button"
+        className={style.searchBar_button}
+        type="submit"
+        onClick={search}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
