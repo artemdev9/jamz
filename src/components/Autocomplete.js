@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "../styles/Autocomplete.module.css";
 
 function Autocomplete(props) {
@@ -13,7 +13,7 @@ function Autocomplete(props) {
         <button
           key={track.id}
           className={style.track}
-          onClick={() => handleTrackClick(track.name)} 
+          onClick={() => handleTrackClick(track.name)}
         >
           <p>{track.name}</p>
         </button>
