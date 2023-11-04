@@ -13,11 +13,32 @@ function App() {
   Spotify.getAccessToken();
 
   const [searchData, setSearchData] = useState([]);
+  const [autocompleteData, setAutocompleteData] = useState([]);
   const [playlistName, setPlaylistName] = useState("My Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const search = (term) => {
     Spotify.search(term).then(setSearchData);
+  };
+
+  const getSuggestions = (term) => {
+    const capitalizeFirstLetter = (string) => {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    };
+    Spotify.search(term, true).then((result) => {
+      let names = [];
+      let noDublicatesAutocompleteData = [];
+      result.forEach((track) => {
+        if (!names.includes(track.name.toLowerCase())) {
+          noDublicatesAutocompleteData.push({
+            id: track.id,
+            name: capitalizeFirstLetter(track.name.toLowerCase()),
+          });
+          names.push(track.name.toLowerCase());
+        }
+      });
+      setAutocompleteData(noDublicatesAutocompleteData);
+    });
   };
 
   const savePlaylist = () => {
@@ -64,7 +85,11 @@ function App() {
         <Logo />
       </div>
       <div className={style.App_search}>
-        <SearchBar onSearch={search}></SearchBar>
+        <SearchBar
+          onSearch={search}
+          onChange={getSuggestions}
+          autocompleteData={autocompleteData}
+        ></SearchBar>
         <div className={style.App_tracks}>
           <SearchResults searchData={searchData} addTrack={addTrack} />
           <div className={style.blackground_halfcircle_middle}></div>

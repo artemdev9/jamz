@@ -44,6 +44,7 @@
 /* css applied to the whole page */
 html,body {
   height: 100vh;
+  box-sizing: border-box;
 }
 
 button,input,h2 {

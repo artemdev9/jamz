@@ -1,3 +1,13 @@
+.searchBar_autocomplete_container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 12%;
+}
+
 .searchBar_container {
     display: flex;
     flex-wrap: wrap;
@@ -5,7 +15,6 @@
     justify-content: center;
     height: 100px;
     width: 100%;
-    margin-bottom: 12%;
 }
 
 .searchBar_input {
@@ -27,7 +36,7 @@ svg{
 }
 
 @media screen and (max-width: 570px) {
-    .searchBar_container{
+    .searchBar_autocomplete_container{
         margin-top: 2%;
         margin-bottom: 6%;
     }

@@ -41,6 +41,7 @@
     flex-direction: column;
     justify-content: flex-start;
     min-height: 80vh;
+    overflow-x: hidden;
 }
 
 .App-link {

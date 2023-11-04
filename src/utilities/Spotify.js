@@ -1,5 +1,5 @@
 const clientId = "ce95af709e3d4517af7768b52b421167";
-const redirectUri = "https://jammz.netlify.app/";
+const redirectUri = "http://localhost:3000/";
 let accessToken;
 
 const Spotify = {
@@ -22,7 +22,7 @@ const Spotify = {
     }
   },
 
-  search(term) {
+  search(term, autocomplete = false) {
     const accessToken = Spotify.getAccessToken();
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
       headers: {
@@ -36,13 +36,21 @@ const Spotify = {
         if (!jsonResponse.tracks) {
           return [];
         }
-        return jsonResponse.tracks.items.map((track) => ({
-          id: track.id,
-          name: track.name,
-          artist: track.artists[0].name,
-          album: track.album.name,
-          uri: track.uri,
-        }));
+
+        if (!autocomplete) {
+          return jsonResponse.tracks.items.map((track) => ({
+            id: track.id,
+            name: track.name,
+            artist: track.artists[0].name,
+            album: track.album.name,
+            uri: track.uri,
+          }));
+        } else {
+          return jsonResponse.tracks.items.map((track) => ({
+            id: track.id,
+            name: track.name,
+          }));
+        }
       });
   },
 
