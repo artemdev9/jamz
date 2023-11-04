@@ -9,7 +9,6 @@ function SearchBar(props) {
 
   const handleTermChange = (event) => {
     setTerm(event.target.value);
-    console.log(term);
     props.onChange(term);
   };
 

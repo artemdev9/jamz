@@ -4,7 +4,7 @@
     align-items: center;
     justify-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     margin-bottom: 12%;
 }
 
@@ -29,6 +29,7 @@
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     border: 0px;
+    width: 3%;
 }
 
 svg{

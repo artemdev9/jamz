@@ -3,11 +3,12 @@
     flex-direction: row;
     overflow: scroll;
     overflow-y: hidden;
-    width: 40%;
+    width: 43.7%;
 }
 
 .track{
     background-color: rgb(82, 40, 40);
+    border-radius: 10px;
     margin: 5px;
     font-size: 0.8rem;
     color: white;

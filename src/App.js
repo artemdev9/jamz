@@ -19,6 +19,7 @@ function App() {
 
   const search = (term) => {
     Spotify.search(term).then(setSearchData);
+    getSuggestions(term);
   };
 
   const getSuggestions = (term) => {
