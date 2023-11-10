@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Spotify from "../utilities/Spotify";
 import style from "../styles/SignIn.module.css";
 
