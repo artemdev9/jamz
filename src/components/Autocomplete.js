@@ -75,6 +75,7 @@ function Autocomplete(props) {
       autocomplete_container.removeEventListener("mouseup", handleMouseup);
       autocomplete_container.removeEventListener("mousemove", handleMousemove);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
