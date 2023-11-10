@@ -1,0 +1,19 @@
+.signin_container{
+    z-index: 10;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(100, 100, 100, 0.9);
+    position: absolute;
+}
+
+.signin_button{
+    width: 250px;
+    height: 100px;
+    border-radius: 10px;
+    margin: 50vh auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

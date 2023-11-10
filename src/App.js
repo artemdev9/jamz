@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./App.css";
 import style from "./styles/App.module.css";
@@ -8,9 +8,10 @@ import SearchResults from "./components/SearchResults";
 import Playlist from "./components/Playlist";
 import Spotify from "./utilities/Spotify";
 import Logo from "./components/Logo";
+import SignIn from "./components/SingIn";
 
 function App() {
-  Spotify.getAccessToken();
+  // create a login with spotify overlay so that when the user comes to the website they can login with thier spotify account by clicking a button
 
   const [searchData, setSearchData] = useState([]);
   const [autocompleteData, setAutocompleteData] = useState([]);
@@ -80,6 +81,7 @@ function App() {
 
   return (
     <div className="App">
+      <SignIn />
       <div className={style.blackground_halfcircle_top}></div>
       <div className={style.logo_container}>
         <header className={style.logo}>Jamz</header>
@@ -91,17 +93,21 @@ function App() {
           onChange={getSuggestions}
           autocompleteData={autocompleteData}
         ></SearchBar>
-        <div className={style.App_tracks}>
-          <SearchResults searchData={searchData} addTrack={addTrack} />
-          <div className={style.blackground_halfcircle_middle}></div>
-          <Playlist
-            playlistName={playlistName}
-            playlist={playlistTracks}
-            removeTrack={removeTrack}
-            playlistNameChange={playlistNameChange}
-            playlistSave={savePlaylist}
-          />
-        </div>
+        {searchData.length === 0 ? (
+          <p>serach for a playlist</p>
+        ) : (
+          <div className={style.App_tracks}>
+            <SearchResults searchData={searchData} addTrack={addTrack} />
+            <div className={style.blackground_halfcircle_middle}></div>
+            <Playlist
+              playlistName={playlistName}
+              playlist={playlistTracks}
+              removeTrack={removeTrack}
+              playlistNameChange={playlistNameChange}
+              playlistSave={savePlaylist}
+            />
+          </div>
+        )}
       </div>
       <div className={style.blackground_halfcircle_bottom}></div>
     </div>

@@ -5,6 +5,7 @@
     justify-items: center;
     flex-direction: column;
     width: 100vw;
+    margin-top: 1%;
     margin-bottom: 12%;
 }
 
@@ -13,7 +14,6 @@
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    height: 100px;
     width: 100%;
 }
 

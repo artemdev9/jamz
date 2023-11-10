@@ -1,5 +1,5 @@
 const clientId = "ce95af709e3d4517af7768b52b421167";
-const redirectUri = "https://jammz.netlify.app/";
+const redirectUri = "http://localhost:3000/";
 let accessToken;
 
 const Spotify = {
@@ -8,22 +8,45 @@ const Spotify = {
       return accessToken;
     }
 
-    const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-    const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
-    if (accessTokenMatch && expiresInMatch) {
-      accessToken = accessTokenMatch[1];
-      const expiresIn = Number(expiresInMatch[1]);
-      window.setTimeout(() => (accessToken = ""), expiresIn * 1000);
-      window.history.pushState("Access Token", null, "/");
-      return accessToken;
-    } else {
-      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
-      window.location = accessUrl;
-    }
-  },
+    const spotifyAuthUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
+    const popup = window.open(
+      spotifyAuthUrl,
+      "Spotify Login",
+      "width=800,height=600"
+    );
 
+    const interval = setInterval(() => {
+      let accessTokenMatch, expiresInMatch;
+
+      try {
+        accessTokenMatch = popup.location.href.match(/access_token=([^&]*)/);
+        expiresInMatch = popup.location.href.match(/expires_in=([^&]*)/);
+      } catch (error) {
+        console.error(
+          "An error occurred (!IMPORTANT: If the the error is Failed to read a named property 'href' from 'Location' - ignore. Once the user logs in and gets redirected back to the website, the error will disappear):",
+          error
+        );
+      }
+
+      if (accessTokenMatch && expiresInMatch) {
+        accessToken = accessTokenMatch[1];
+        const expiresIn = parseInt(expiresInMatch[1]) * 1000; // in ms
+        window.setTimeout(() => {
+          accessToken = "";
+          const eventSignInFalse = new Event("setSignInFalse");
+          window.dispatchEvent(eventSignInFalse);
+        }, expiresIn);
+
+        const eventSignInTrue = new Event("setSignInTrue");
+        window.dispatchEvent(eventSignInTrue);
+        popup.close();
+        clearInterval(interval);
+      }
+    }, 1000);
+  },
   search(term, autocomplete = false) {
     const accessToken = Spotify.getAccessToken();
+    console.log("accesstoken from search: " + accessToken);
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
