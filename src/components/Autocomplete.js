@@ -74,7 +74,7 @@ function Autocomplete(props) {
       autocomplete_container.removeEventListener("mouseup", handleMouseup);
       autocomplete_container.removeEventListener("mousemove", handleMousemove);
     };
-  }, []); // Empty dependency array to ensure it's only set up once
+  }, [isClick]);
 
   return (
     <div className={style.autocomplete_container} id="autocomplete_container">
