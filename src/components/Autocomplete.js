@@ -11,6 +11,7 @@ function Autocomplete(props) {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // variables
     const autocomplete_container = document.getElementById(
