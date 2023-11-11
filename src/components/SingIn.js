@@ -46,7 +46,7 @@ function SignIn() {
                 fill="#191414"
               />
             </svg>
-            <h4>Sign in with Spotify</h4>
+            <h4 className={style.signin_font}>Sign in with Spotify</h4>
           </button>
         </div>
       )}
