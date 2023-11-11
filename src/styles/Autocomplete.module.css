@@ -15,4 +15,12 @@
     text-wrap: nowrap;
 }
 
-  
+@media screen and (max-width: 570px) {
+    .track{
+        color: rgb(0, 0, 0);
+    }
+
+    .autocomplete_container{
+        width: 78%;
+    }
+}

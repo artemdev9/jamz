@@ -9,6 +9,7 @@ import Playlist from "./components/Playlist";
 import Spotify from "./utilities/Spotify";
 import Logo from "./components/Logo";
 import SignIn from "./components/SingIn";
+import Information from "./components/Information";
 
 function App() {
   // create a login with spotify overlay so that when the user comes to the website they can login with thier spotify account by clicking a button
@@ -94,7 +95,7 @@ function App() {
           autocompleteData={autocompleteData}
         ></SearchBar>
         {searchData.length === 0 ? (
-          <p>serach for a playlist</p>
+          <Information />
         ) : (
           <div className={style.App_tracks}>
             <SearchResults searchData={searchData} addTrack={addTrack} />
