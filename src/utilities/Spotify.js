@@ -1,48 +1,72 @@
 const clientId = "ce95af709e3d4517af7768b52b421167";
+const clientSecret = "ca7d6dddc04541b18d3ded0b50dcecc6";
 const redirectUri = "https://jammz.netlify.app/";
 let accessToken;
 
 const Spotify = {
   getAccessToken() {
+    // if (accessToken) {
+    //   return accessToken;
+    // }
+
+    // const spotifyAuthUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
+    // const popup = window.open(
+    //   spotifyAuthUrl,
+    //   "Spotify Login",
+    //   "width=800,height=600"
+    // );
+
+    // const interval = setInterval(() => {
+    //   let accessTokenMatch, expiresInMatch;
+
+    //   try {
+    //     accessTokenMatch = popup.location.href.match(/access_token=([^&]*)/);
+    //     expiresInMatch = popup.location.href.match(/expires_in=([^&]*)/);
+    //   } catch (error) {
+    //     console.error(
+    //       "An error occurred (!IMPORTANT: If the the error is Failed to read a named property 'href' from 'Location' - ignore. Once the user logs in and gets redirected back to the website, the error will disappear):",
+    //       error
+    //     );
+    //   }
+
+    //   if (accessTokenMatch && expiresInMatch) {
+    //     accessToken = accessTokenMatch[1];
+    //     const expiresIn = parseInt(expiresInMatch[1]) * 1000; // in ms
+    //     window.setTimeout(() => {
+    //       accessToken = "";
+    //       const eventSignInFalse = new Event("setSignInFalse");
+    //       window.dispatchEvent(eventSignInFalse);
+    //     }, expiresIn);
+
+    //     const eventSignInTrue = new Event("setSignInTrue");
+    //     window.dispatchEvent(eventSignInTrue);
+    //     popup.close();
+    //     clearInterval(interval);
+    //   }
+    // }, 1000);
+
     if (accessToken) {
       return accessToken;
     }
 
-    const spotifyAuthUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
-    const popup = window.open(
-      spotifyAuthUrl,
-      "Spotify Login",
-      "width=800,height=600"
-    );
+    const basicAuth = btoa(`${clientId}:${clientSecret}`);
+    const tokenUrl = "https://accounts.spotify.com/api/token";
 
-    const interval = setInterval(() => {
-      let accessTokenMatch, expiresInMatch;
-
-      try {
-        accessTokenMatch = popup.location.href.match(/access_token=([^&]*)/);
-        expiresInMatch = popup.location.href.match(/expires_in=([^&]*)/);
-      } catch (error) {
-        console.error(
-          "An error occurred (!IMPORTANT: If the the error is Failed to read a named property 'href' from 'Location' - ignore. Once the user logs in and gets redirected back to the website, the error will disappear):",
-          error
-        );
-      }
-
-      if (accessTokenMatch && expiresInMatch) {
-        accessToken = accessTokenMatch[1];
-        const expiresIn = parseInt(expiresInMatch[1]) * 1000; // in ms
-        window.setTimeout(() => {
-          accessToken = "";
-          const eventSignInFalse = new Event("setSignInFalse");
-          window.dispatchEvent(eventSignInFalse);
-        }, expiresIn);
-
+    return fetch(tokenUrl, {
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${basicAuth}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: "grant_type=client_credentials",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        accessToken = data.access_token;
         const eventSignInTrue = new Event("setSignInTrue");
         window.dispatchEvent(eventSignInTrue);
-        popup.close();
-        clearInterval(interval);
-      }
-    }, 1000);
+        return accessToken;
+      });
   },
   search(term, autocomplete = false) {
     const accessToken = Spotify.getAccessToken();

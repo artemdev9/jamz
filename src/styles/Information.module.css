@@ -10,3 +10,35 @@
     justify-self: center;
     margin-top: 4rem;
 }
+
+.Information_instructions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.Information_instructions_item {
+    display: flex;
+    list-style-type: none;
+    background-color: rgb(0, 0, 0);
+    width: 15rem;
+    height: 5rem;
+    border-radius: 18px;
+    align-items: center; 
+    margin: 1rem;
+}
+
+.Information_instructions_item h4 {
+    color: white;
+    width: 85%;
+    text-align: center; 
+}
+
+.Information_instructions_item h1 {
+    margin-left: 3%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    width: 12%;
+    text-align: center; 
+}

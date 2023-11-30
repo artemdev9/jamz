@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./App.css";
 import style from "./styles/App.module.css";
@@ -12,7 +12,9 @@ import SignIn from "./components/SingIn";
 import Information from "./components/Information";
 
 function App() {
-  // create a login with spotify overlay so that when the user comes to the website they can login with thier spotify account by clicking a button
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
 
   const [searchData, setSearchData] = useState([]);
   const [autocompleteData, setAutocompleteData] = useState([]);

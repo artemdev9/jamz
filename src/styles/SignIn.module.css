@@ -5,19 +5,59 @@
     height: 100vh;
     background-color: rgba(100, 100, 100, 0.9);
     position: absolute;
+    display: flex;
+    flex-direction: column;
 }
 
 .signin_button{
     width: 250px;
     height: 100px;
     border-radius: 10px;
-    margin: 50vh auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    border: 3px solid rgb(0, 0, 0);
 }
 
 .signin_font {
     font-size: 23px;
+}
+
+.signin_information{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    /* height: 60%; */
+    width: 80%;
+    align-self: center;
+    border: 3px solid rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.signin_container_buttons{   
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.signin_information h3{    
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.signin_information h4{
+    padding: 15px 0;
+}
+
+.signin_information li{
+    text-align: left;
+    font-weight: 500;
+    font-size: large;
+    padding: 3px;
+}
+
+.title{
+    text-align: center;
 }
