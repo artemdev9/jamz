@@ -3,6 +3,7 @@
     overflow: scroll;
     width: 100vw;
     height: 100vh;
+    height: -webkit-fill-available; 
     background-color: rgba(100, 100, 100, 0.9);
     /* position: absolute; */
     display: flex;
