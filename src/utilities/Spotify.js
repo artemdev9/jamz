@@ -1,6 +1,6 @@
 const clientId = "ce95af709e3d4517af7768b52b421167";
 const clientSecret = "ca7d6dddc04541b18d3ded0b50dcecc6";
-const redirectUri = "https://jammz.netlify.app/";
+// const redirectUri = "https://jammz.netlify.app/";
 let accessToken;
 
 const Spotify = {
