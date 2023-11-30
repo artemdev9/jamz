@@ -1,13 +1,14 @@
-.signin_container{
+.signin_container {
     z-index: 10;
-    /* overflow: hidden; */
+    overflow: scroll;
     width: 100vw;
-    /* height: 100vh; */
+    height: 100vh;
     background-color: rgba(100, 100, 100, 0.9);
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
 }
+  
 
 .signin_button{
     width: 250px;
