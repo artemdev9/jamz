@@ -65,10 +65,16 @@ function SignIn() {
             </h4>
           </div>
           <div className={style.signin_container_buttons}>
-            <button className={style.signin_button} onClick={handleSignInDemo}>
+            <button
+              className={`${style.signin_button} ${style.btn_left}`}
+              onClick={handleSignInDemo}
+            >
               <h4 className={style.signin_font}>DEMO</h4>
             </button>
-            <button className={style.signin_button} onClick={handleSignIn}>
+            <button
+              className={`${style.signin_button} ${style.btn_right}`}
+              onClick={handleSignIn}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="120"

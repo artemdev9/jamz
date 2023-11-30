@@ -10,7 +10,6 @@
     flex-direction: column;
 }
   
-
 .signin_button{
     width: 250px;
     height: 100px;
@@ -19,6 +18,14 @@
     align-items: center;
     justify-content: center;
     border: 3px solid rgb(0, 0, 0);
+}
+
+.btn_left{
+    margin-right: 10px;
+}
+
+.btn_right{
+    margin-left: 10px;
 }
 
 .signin_font {
@@ -31,7 +38,7 @@
     margin-top: 5%;
     margin-bottom: 2%;
     /* max-height: 60%;  */
-    width: 80%;
+    width: 80vw;
     align-self: center;
     border: 3px solid rgb(0, 0, 0);
     padding: 10px;
@@ -39,8 +46,10 @@
 
 .signin_container_buttons{   
     height: 30%;
+    width: calc(80vw + 10px + 10px + 3px + 3px);
     display: flex;
     align-items: center;
+    align-self: center;
     justify-content: space-evenly;
 }
 
@@ -62,4 +71,13 @@
 
 .title{
     text-align: center;
+}
+
+
+@media screen and (max-width: 550px) { 
+    .signin_button{
+        width: 50%;
+        height: 100px;
+    }
+
 }
