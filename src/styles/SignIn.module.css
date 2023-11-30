@@ -1,8 +1,8 @@
 .signin_container{
     z-index: 10;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: rgba(100, 100, 100, 0.9);
     position: absolute;
     display: flex;
@@ -28,7 +28,7 @@
     border-radius: 10px;
     margin-top: 5%;
     margin-bottom: 2%;
-    max-height: 60%; 
+    /* max-height: 60%;  */
     width: 80%;
     align-self: center;
     border: 3px solid rgb(0, 0, 0);
