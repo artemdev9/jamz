@@ -2,8 +2,8 @@
     z-index: 10;
     overflow: scroll;
     width: 100vw;
-    /* height: 100vh; */
-    height: -webkit-fill-available; 
+    height: 100vh;
+    height: 100svh;
     background-color: rgba(100, 100, 100, 0.9);
     /* position: absolute; */
     display: flex;
