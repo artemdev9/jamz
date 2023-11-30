@@ -1,5 +1,4 @@
 .Information_container{
-    width: 60%;
     display: grid;
     align-self: center;
     flex-direction: column;
