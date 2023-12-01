@@ -1,71 +1,73 @@
-# Getting Started with Create React App
+#React Spotify Portfolio Project#
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Overview##
 
-## Available Scripts
+This is a portfolio project built with React that integrates with the Spotify API. The application allows users to search for songs, utilize autocomplete for suggestions based on the current search results, add songs to a playlist, and save that playlist to their Spotify account, if they have logged in to their Spotify account.
 
-In the project directory, you can run:
+##Features##
 
-### `npm start`
+-Song Search:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Users can search for songs using the search bar.
+Autocomplete suggestions are provided based on the current search results.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-Playlist Management:
 
-### `npm test`
+Users can add songs to a playlist.
+The playlist is dynamically updated as songs are added or removed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-Spotify Integration:
 
-### `npm run build`
+Users can log in with their Spotify account to enable saving playlists to their Spotify account.
+Authentication is handled securely using Spotify's OAuth 2.0 authentication.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-Demonstration Mode:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Users who do not log in with Spotify can still use the application in a demonstration mode.
+Demonstrative features such as adding songs to a playlist are available without saving to a Spotify account.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##Getting Started##
 
-### `npm run eject`
+-Clone the Repository:
+git clone https://github.com/your-username/react-spotify-portfolio.git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-Install Dependencies:
+cd react-spotify-portfolio
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-Run the Application:
+change the redirectUri on line 3 file Spotify.js to 'http://localhost:3000' instead of 'https://jammz.netlify.app/'
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The application will be accessible at http://localhost:3000.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##Usage##
 
-## Learn More
+-Search for Songs:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Enter a song title or artist in the search bar.
+Autocomplete suggestions will help refine the search.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-Add to Playlist:
 
-### Code Splitting
+Click on the plus to add the song to the playlist.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-Spotify Integration:
 
-### Analyzing the Bundle Size
+Log in with Spotify to save your playlist to your Spotify account.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-Demonstration Mode:
 
-### Making a Progressive Web App
+If you choose not to log in, you can still use the application in a demonstration mode.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##Technologies Used##
+-React
+-Spotify API
+-OAuth 2.0 Authentication
+-HTML, CSS, JavaScript
 
-### Advanced Configuration
+##Contributing##
+Feel free to contribute to the project by opening issues or creating pull requests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# jamz
+##License##
+This project is licensed under the MIT License - see the LICENSE file for details.
