@@ -16,7 +16,9 @@ function SignIn() {
   }, []);
 
   // sign in with spotify
+  // problem - the sign in screen is not disappering
   const handleSignIn = () => {
+    Spotify.setDemo(false);
     Spotify.getAccessToken();
   };
 
@@ -25,6 +27,7 @@ function SignIn() {
     document.getElementsByTagName("body")[0].style.overflow = "auto";
   };
 
+  // if the access token expired the log in screen will appear
   const setFalse = () => {
     window.scrollTo(0, 0);
     setIsSignedIn(false);
@@ -33,6 +36,7 @@ function SignIn() {
 
   // demo
   const handleSignInDemo = () => {
+    Spotify.setDemo(true);
     Spotify.getAccessToken();
   };
 
@@ -53,7 +57,9 @@ function SignIn() {
             <li>Access all features except saving playlists.</li>
 
             <h3>Full Access</h3>
-            <li>Email [email address] with the subject 'Jamz full access.'</li>
+            <li>
+              Email artdumchev@gmail.com with the subject 'Jamz full access.'
+            </li>
             <li>
               Include: Keyword: 'Jamz full access', Spotify account email,
               Spotify name
