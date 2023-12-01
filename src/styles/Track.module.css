@@ -27,8 +27,14 @@ h4{
     border-bottom: 2px solid black;
 }
 
+/* make the button fixed in size width and height so that is doesnt stretch when the website is opened on iphone  */
 .track_controls {
     font-size: 2em;
-    color: black;
-    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    background-color: black;
+    /* background-color: rgb(0 0 0 / 0%); */
+    border-radius: 4px;
+    margin: 10px;
+    aspect-ratio: 1/1;
+    width: 8%;
 }
