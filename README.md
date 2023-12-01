@@ -25,7 +25,7 @@ This is a portfolio project built with React that integrates with the Spotify AP
 ## Getting Started
 
 - Clone the Repository:
-  git clone https://github.com/your-username/react-spotify-portfolio.git
+  git clone https://github.com/artemdev9/jamz
 
 - Install Dependencies:
   cd react-spotify-portfolio
