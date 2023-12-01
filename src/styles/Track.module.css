@@ -22,7 +22,8 @@ h4{
 .track_control_container{
     display: flex;
     justify-content: space-between;
-    width:100%;  
+    align-items: center;
+    width: 100%;  
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
@@ -36,5 +37,5 @@ h4{
     border-radius: 4px;
     margin: 10px;
     aspect-ratio: 1/1;
-    width: 8%;
+    height: 40px;
 }
