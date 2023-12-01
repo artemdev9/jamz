@@ -25,14 +25,15 @@ This is a portfolio project built with React that integrates with the Spotify AP
 ## Getting Started
 
 - Clone the Repository:
-  git clone https://github.com/your-username/react-spotify-portfolio.git
+  git clone https://github.com/artemdev9/jamz
 
 - Install Dependencies:
   cd react-spotify-portfolio
   npm install
 
+- Change the redirectUri on line 3 file Spotify.js to 'http://localhost:3000' instead of 'https://jammz.netlify.app/'
+
 - Run the Application:
-  change the redirectUri on line 3 file Spotify.js to 'http://localhost:3000' instead of 'https://jammz.netlify.app/'
   npm start
 
 The application will be accessible at http://localhost:3000.
