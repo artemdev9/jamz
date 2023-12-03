@@ -9,6 +9,7 @@ function Logo() {
     strokeMiterlimit: 2,
     width: "10%", // Set the width to 100%
     height: "auto", // Let the height adjust automatically to maintain aspect ratio
+    marginTop: "5px",
   };
 
   return (
