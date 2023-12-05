@@ -23,6 +23,7 @@ function App() {
 
   useEffect(() => {
     checkTracks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchData]);
 
   const search = (term) => {
@@ -96,15 +97,15 @@ function App() {
   };
 
   const checkTracks = () => {
-    console.log("checkTracks called.");
-    var i;
-    for (i = 0; i < searchData.length; i++) {
-      for (var q = 0; q < playlistTracks.length; q++) {
-        if (searchData[i].id === playlistTracks[q].id) {
-          setSearchData(searchData.filter((item) => item !== searchData[i]));
+    searchData.forEach((searchItem) => {
+      playlistTracks.forEach((playlistItem) => {
+        if (searchItem.id === playlistItem.id) {
+          setSearchData((prevSearchData) =>
+            prevSearchData.filter((item) => item !== searchItem)
+          );
         }
-      }
-    }
+      });
+    });
   };
 
   return (
