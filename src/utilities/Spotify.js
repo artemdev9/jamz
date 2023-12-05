@@ -35,7 +35,6 @@ const Spotify = {
         if (accessTokenMatch && expiresInMatch) {
           accessToken = accessTokenMatch[1];
           const expiresIn = parseInt(expiresInMatch[1]) * 1000; // in ms
-          console.log(expiresIn);
 
           // when the access token expires the signIn variable in the react application will become false, asking the user to login again
           window.setTimeout(() => {
@@ -77,7 +76,6 @@ const Spotify = {
   },
   search(term, autocomplete = false) {
     const accessToken = Spotify.getAccessToken();
-    console.log("accesstoken from search: " + accessToken);
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,

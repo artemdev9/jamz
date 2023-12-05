@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./App.css";
 import style from "./styles/App.module.css";
@@ -21,8 +21,18 @@ function App() {
   const [playlistName, setPlaylistName] = useState("My Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
+  useEffect(() => {
+    checkTracks();
+  }, [searchData]);
+
   const search = (term) => {
-    Spotify.search(term).then(setSearchData);
+    Spotify.search(term)
+      .then((searchResults) => {
+        setSearchData(searchResults);
+      })
+      .catch((error) => {
+        console.error("Error during search:", error);
+      });
     getSuggestions(term);
   };
 
@@ -61,13 +71,15 @@ function App() {
     let trackAlreadyAdded = false;
     playlistTracks.forEach((item) => {
       if (track.id === item.id) {
-        console.log("track was already added");
         trackAlreadyAdded = true;
         return; // track has already been added
       }
     });
     if (!trackAlreadyAdded) {
       setPlaylistTracks((prevTracks) => [...prevTracks, track]);
+      setSearchData((prevTracks) => [
+        ...prevTracks.filter((item) => item !== track),
+      ]);
     }
   };
 
@@ -75,11 +87,27 @@ function App() {
     setPlaylistTracks((prevTracks) =>
       prevTracks.filter((currentTrack) => currentTrack.id !== track.id)
     );
+    setSearchData((prevTracks) => [...prevTracks, track]);
   };
 
   const playlistNameChange = (name) => {
     console.log(name);
     setPlaylistName(name);
+  };
+
+  // make a function that would check if the song is inside the playlist
+  // if it is then remove it from the results
+  // if it is not display it as usual
+
+  const checkTracks = () => {
+    console.log("checkTracks called.");
+    for (var i = 0; i < searchData.length; i++) {
+      for (var q = 0; q < playlistTracks.length; q++) {
+        if (searchData[i].id === playlistTracks[q].id) {
+          setSearchData(searchData.filter((item) => item !== searchData[i]));
+        }
+      }
+    }
   };
 
   return (
@@ -96,7 +124,7 @@ function App() {
           onChange={getSuggestions}
           autocompleteData={autocompleteData}
         ></SearchBar>
-        {searchData.length === 0 ? (
+        {searchData.length === 0 && playlistTracks.length === 0 ? (
           <Information />
         ) : (
           <div className={style.App_tracks}>
