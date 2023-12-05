@@ -95,13 +95,10 @@ function App() {
     setPlaylistName(name);
   };
 
-  // make a function that would check if the song is inside the playlist
-  // if it is then remove it from the results
-  // if it is not display it as usual
-
   const checkTracks = () => {
     console.log("checkTracks called.");
-    for (var i = 0; i < searchData.length; i++) {
+    var i;
+    for (i = 0; i < searchData.length; i++) {
       for (var q = 0; q < playlistTracks.length; q++) {
         if (searchData[i].id === playlistTracks[q].id) {
           setSearchData(searchData.filter((item) => item !== searchData[i]));
