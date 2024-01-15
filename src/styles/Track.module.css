@@ -22,9 +22,9 @@ h4{
 
 .track_control_container{
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
-    /* width: 100%;   */
+    width: 100%;  
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
@@ -35,7 +35,7 @@ h4{
     color: #ffffff;
     background-color: black;
     border-radius: 4px;
-    /* margin: 10px; */
+    margin: 10px;
     height: 40px;
     width: 40px;
     display: flex;
