@@ -37,8 +37,16 @@ h4{
     border-radius: 4px;
     margin: 10px;
     height: 40px;
-    width: 40px;
+    max-width: 40px; 
+    width: 100%; 
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+
+/* @media (max-width: 600px) {
+    .track_controls {
+        width: 40px; 
+    }
+} */
