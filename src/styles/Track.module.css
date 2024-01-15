@@ -17,29 +17,32 @@ h4{
     justify-content: left;
     align-items: flex-start;
     padding: 0.6em 0;
-    /* width: 85%; */
+    width: 85%;
 }
 
 .track_control_container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* width: 100%;   */
+    width: 100%;  
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
 
 /* doesnt work as expected on mobile */
 .track_controls {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 10%;
+}
+
+.track_controls_button {
     font-size: 2em;
     color: #ffffff;
     background-color: black;
     border-radius: 4px;
-    margin: 10px;
+    /* margin: 10px; */
     height: 40px;
-    width: 40px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 40px;
 }
-
