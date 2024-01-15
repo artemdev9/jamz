@@ -17,14 +17,14 @@ h4{
     justify-content: left;
     align-items: flex-start;
     padding: 0.6em 0;
-    width: 85%;
+    /* width: 85%; */
 }
 
 .track_control_container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;  
+    /* width: 100%;   */
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
@@ -37,16 +37,9 @@ h4{
     border-radius: 4px;
     margin: 10px;
     height: 40px;
-    max-width: 40px; 
-    width: 100%; 
+    width: 40px; 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
-@media (max-width: 600px) {
-    .track_controls {
-        width: 40px; 
-    }
-}
