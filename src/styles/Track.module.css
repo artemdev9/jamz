@@ -45,8 +45,8 @@ h4{
 }
 
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
     .track_controls {
         width: 40px; 
     }
-} */
+}
